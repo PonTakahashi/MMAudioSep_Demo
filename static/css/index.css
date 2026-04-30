@@ -311,3 +311,43 @@ body {
   margin-left: 0.5rem;
   font-size: 0.85em;
 }
+
+
+/* =========================================================
+   Horizontal swipe UX (mobile)
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* Horizontal swipe container */
+  .demo-table-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;              /* avoid vertical conflicts */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;             /* prioritize horizontal swipe */
+  }
+
+  /* Disable sticky behavior on mobile */
+  .demo-table thead th,
+  .demo-table th.query-col,
+  .demo-table td.query-col {
+    position: static !important;
+    box-shadow: none !important;
+  }
+
+  /* Slightly reduce media size for mobile */
+  .demo-table img,
+  .demo-video-thumb,
+  .demo-table audio {
+    width: 200px;
+  }
+
+  /* Swipe hint */
+  .demo-table-scroll::before {
+    content: "← Swipe horizontally to explore the demo →";
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 6px;
+  }
+}
