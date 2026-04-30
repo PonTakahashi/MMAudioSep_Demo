@@ -1,9 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>MMAudioSep_Demo</title>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"> </script>
+
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Taming Video-to-Audio Generative Model Towards Video/Text-Queried Sound Separation.">
+  <meta property="og:title" content="MMAudioSep"/>
+  <meta property="og:description" content="Taming Video-to-Audio Generative Model Towards Video/Text-Queried Sound Separation."/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/icon.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="MMAudioSep">
+  <meta name="twitter:description" content="Taming Video-to-Audio Generative Model Towards Video/Text-Queried Sound Separation.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/icon.png">
+  <meta name="twitter:card" content="static/images/icon.png">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>MMAudioSep Demo Page</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
-</body>
-</html>
+
+
+<section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">MMAudioSep: Taming Video-to-Audio Generative Model Towards Video/Text-Queried Sound Separation</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+            <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=oKUpOaQAAAAJ" target="_blank">Akira Takahashi</a><span><sup>1</sup></span>,
+            </span>
+            <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=_mhxayYAAAAJ" target="_blank">Shusuke Takahashi</a><span><sup>1</sup></span>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.yukimitsufuji.com/" target="_blank">Yuki Mitsufuji</a><span><sup>1,2</sup></span>,
+            </span>
+            </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Sony Group Corporation, <sup>2</sup>Sony AI<br>
+            <span class="author-block">
+            </div>
+            <div class="column has-text-centered">
+            <div class="publication-links">
+            <!-- ArXiv abstract Link -->
+            <span class="link-block">
+            <a href="https://arxiv.org/abs/2510.09065" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="ai ai-arxiv"></i>
+            </span>
+            <span>arXiv</span>
+            </a>
+            </span>
+
+            <!-- Github link -->
+            <span class="link-block">
+                <a href="https://github.com/sony/mmaudiosep" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+            </a>
+            </span>
+    </span>
+    </div>
+    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                <p>
+                    We introduce MMAudioSep, a generative model for video/text-queried sound separation that is founded on a pretrained video-to-audio model. 
+                    By leveraging knowledge about the relationship between video/text and audio learned through a pretrained audio generative model, we can train the model more efficiently, i.e., the model does not need to be trained from scratch. 
+                    We evaluate the performance of MMAudioSep by comparing it to existing separation models, including models based on both deterministic and generative approaches, and find it is superior to the baseline models. 
+                    Furthermore, we demonstrate that even after acquiring functionality for sound separation via fine-tuning, the model retains the ability for original video-to-audio generation. 
+                    This highlights the potential of foundational sound generation models to be adopted for sound-related downstream tasks.
+                </p>
+                </div>
+            </div>
+        </div>
+  </div>
+</section>
+
+<!-- Teaser -->
+<section class="section hero">
+  <div class="container is-full-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-max-desktop is-full-mobile">
+        <h2 id="section_1" class="title is-3">Take Home Message</h2>
+        <div class="table-container">
+          <table class="table" align="center" style="table-layout: fixed; word-break: break-word; width: 100%;">
+            <thead>
+              <tr>
+                <th scope="col">MMAudioSep Overview</th>
+              </tr>
+            </thead>
+            <thead>
+              <tr>
+             <th>Fig. 2: The Overview of MMAudioSep Architecture. Ice icons: frozen modules. Fire icons: trainable modules. </th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img src="static/images/fig2_overview_mmaudiosep.png"
+                      width="1024"
+                      height="600"
+                      >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-full-desktop">
+    <h2 id="section_2" class="title is-3 has-text-centered">
+      Demo on VGGSound-Clean dataset
+    </h2>
+    <div class="demo-table-wrap">
+      <div class="demo-xscroll demo-xscroll-top">
+        <div class="demo-xscroll-inner"></div>
+      </div>
+
+      <div class="table-container demo-table-scroll demo-xscroll-main">
+        <table class="table is-striped is-narrow is-hoverable demo-table">
+        <thead>
+          <tr>
+            <th class="query-col">Text Query</th>
+            <th>Mixture</th>
+            <th>AudioSep</th>
+            <th>FlowSep</th>
+            <th>MMAudioSep (Text)</th>
+            <th>MMAudioSep (Video)</th>
+            <th>MMAudioSep (Video+Text)</th>
+            <th>Ground Truth</th>
+          </tr>
+        </thead>
+
+        <!-- placeholder -->
+        <tbody id="demo-tbody-vggsoundclean"></tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-full-desktop">
+    <h2 id="section_3" class="title is-3 has-text-centered">
+      Demo on MUSIC dataset
+    </h2>
+
+    <div class="demo-table-wrap">
+      <div class="demo-xscroll demo-xscroll-top">
+        <div class="demo-xscroll-inner"></div>
+      </div>
+
+      <div class="table-container demo-table-scroll demo-xscroll-main">
+        <table class="table is-striped is-narrow is-hoverable demo-table">
+
+        <thead>
+          <tr>
+            <th class="query-col">Text Query</th>
+            <th>Mixture</th>
+            <th>AudioSep</th>
+            <th>FlowSep</th>
+            <th>MMAudioSep (Text)</th>
+            <th>MMAudioSep (Video)</th>
+            <th>MMAudioSep (Video+Text)</th>
+            <th>Ground Truth</th>
+          </tr>
+        </thead>
+
+        <!-- placeholder -->
+        <tbody id="demo-tbody-music"></tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @inproceedings{takahashi2025mmaudiosep,
+          title={{MMAudioSep}: Taming Video-to-Audio Generative Model Towards Video/Text-Queried Sound Separation},
+          author={Takahashi, Akira and Takahashi, Shusuke and Mitsufuji, Yuki},
+          booktitle={ICASSP},
+          year={2026}
+        }
+      </code></pre>
+    </div>
+</section>
+
+<!--End BibTex citation -->
+
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

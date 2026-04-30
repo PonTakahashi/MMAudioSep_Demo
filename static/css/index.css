@@ -1,0 +1,313 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-banner {
+  max-height: parent;
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.publication-awards {
+  color: #ff3860;
+  width: fit-content;
+  font-weight: bolder;
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 10px !important;
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  padding: 20px;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.slider-pagination .slider-page {
+  background: #000000;
+}
+
+.eql-cntrb {
+  font-size: smaller;
+}
+
+/* =========================================================
+   Demo Tables (Unified, Cleaned)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Scroll container (card-like)
+   --------------------------------------------------------- */
+.demo-table-wrap {
+  margin-top: 0.5rem;
+}
+
+.demo-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background: #fafafa;
+  border: 1px solid #eef1f6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Top synced horizontal scrollbar */
+.demo-xscroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 14px;
+  border-radius: 12px;
+}
+
+.demo-xscroll-top {
+  background: #fafafa;
+  border: 1px solid #eef1f6;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  margin-bottom: 8px;
+}
+
+.demo-xscroll-inner {
+  height: 1px; /* dummy */
+}
+
+/* ---------------------------------------------------------
+   Table base
+   --------------------------------------------------------- */
+.demo-table {
+  table-layout: fixed;
+  width: max-content;
+  min-width: 1900px; /* query + 7 outputs */
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.demo-table th,
+.demo-table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.85rem 0.6rem;
+  line-height: 1.25;
+  background-clip: padding-box;
+}
+
+/* Column separators (vertical lines only) */
+.demo-table th,
+.demo-table td {
+  border-right: 1px solid #e6eaf2;
+}
+
+.demo-table th:last-child,
+.demo-table td:last-child {
+  border-right: none;
+}
+
+/* ---------------------------------------------------------
+   Sticky header (1st row)
+   --------------------------------------------------------- */
+.demo-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  background: linear-gradient(#f7f9fe, #eef3fb);
+  color: #0b1f5c;
+  font-weight: 600;
+  white-space: nowrap;
+
+  padding-top: 0.95rem;
+  padding-bottom: 0.95rem;
+
+  border-bottom: 3px solid #cfd8ea;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+}
+
+/* Header column separators */
+.demo-table thead th {
+  border-right: 1px solid #dbe3f3;
+}
+.demo-table thead th:last-child {
+  border-right: none;
+}
+
+/* ---------------------------------------------------------
+   Sticky first column (Text Query)
+   --------------------------------------------------------- */
+.demo-table th.query-col,
+.demo-table td.query-col {
+  position: sticky;
+  left: 0;
+  z-index: 4;
+
+  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
+
+  font-weight: 700;
+  color: #333;
+  white-space: normal;
+
+  background: #eef2f8;
+  border-right: 2px solid #d7deea;
+  box-shadow: 2px 0 0 rgba(0,0,0,0.04);
+}
+
+/* intersection: header × query */
+.demo-table thead th.query-col {
+  z-index: 6;
+}
+
+/* ---------------------------------------------------------
+   Row grouping & hover / stripe harmony
+   --------------------------------------------------------- */
+
+.demo-table tbody td,
+.demo-table tbody th {
+  border-bottom: none !important;
+}
+
+.demo-table tbody tr:nth-child(3n) td.query-col {
+  border-bottom: 2px solid #e2e8f2 !important;
+}
+
+/* Stripe / Hover */
+.table.is-striped tbody tr:nth-child(even) td,
+.table.is-striped tbody tr:nth-child(even) th {
+  background-color: #fcfcfd;
+}
+
+.table.is-striped tbody tr:nth-child(even) td.query-col,
+.table.is-hoverable tbody tr:hover td.query-col {
+  background: #eef2f8;
+}
+
+.table.is-hoverable tbody tr:hover td {
+  background: #f6faff;
+}
+
+/* ---------------------------------------------------------
+   Media cells
+   --------------------------------------------------------- */
+
+/* Spectrogram images */
+.demo-table img {
+  width: 250px;
+  height: 125px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* Video thumbs */
+.demo-video-thumb {
+  width: 250px;
+  height: 125px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: #000;
+  object-fit: cover;
+}
+
+/* Audio players (no fixed height) */
+.demo-table audio {
+  width: 250px;
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  min-height: 32px;
+}
+
+/* ---------------------------------------------------------
+   Misc
+   --------------------------------------------------------- */
+.demo-video-row td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+}
+
+.fail-case {
+  color: #e53935;
+  font-weight: 700;
+  margin-left: 0.5rem;
+  font-size: 0.85em;
+}
