@@ -314,40 +314,57 @@ body {
 
 
 /* =========================================================
-   Horizontal swipe UX (mobile)
+   Mobile-only horizontal swipe (DEMO ONLY)
    ========================================================= */
 @media (max-width: 768px) {
 
-  /* Horizontal swipe container */
-  .demo-table-scroll {
+  /* ✅ DEMO TABLE ONLY */
+  .demo-table-wrap .demo-table-scroll {
     overflow-x: auto;
-    overflow-y: hidden;              /* avoid vertical conflicts */
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;             /* prioritize horizontal swipe */
+    touch-action: pan-x;
   }
 
-  /* Disable sticky behavior on mobile */
-  .demo-table thead th,
-  .demo-table th.query-col,
-  .demo-table td.query-col {
+  /* ✅ Disable sticky ONLY inside demo table */
+  .demo-table-wrap .demo-table thead th,
+  .demo-table-wrap .demo-table th.query-col,
+  .demo-table-wrap .demo-table td.query-col {
     position: static !important;
     box-shadow: none !important;
   }
 
-  /* Slightly reduce media size for mobile */
-  .demo-table img,
-  .demo-video-thumb,
-  .demo-table audio {
+  /* ✅ Resize media ONLY in demo */
+  .demo-table-wrap .demo-table img,
+  .demo-table-wrap .demo-video-thumb,
+  .demo-table-wrap .demo-table audio {
     width: 200px;
   }
 
-  /* Swipe hint */
-  .demo-table-scroll::before {
+  /* ✅ Swipe hint ONLY for demo */
+  .demo-table-wrap .demo-table-scroll::before {
     content: "← Swipe horizontally to explore the demo →";
     display: block;
     text-align: center;
     font-size: 0.75rem;
     color: #666;
     margin-bottom: 6px;
+  }
+}
+
+/* =========================================================
+   Keep non-demo sections centered on mobile
+   ========================================================= */
+@media (max-width: 768px) {
+
+  section.section:not(.demo-section),
+  section.hero:not(.demo-section) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
