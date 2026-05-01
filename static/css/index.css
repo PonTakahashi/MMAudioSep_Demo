@@ -110,278 +110,149 @@ body {
 }
 
 /* =========================================================
-   Demo Tables (Unified, Cleaned)
+   FINAL Demo UI (Sample Switch + Method Cards, PC: 4 + 3)
+   ※ 既存CSSは変更不要。末尾に追記する前提
    ========================================================= */
 
-/* ---------------------------------------------------------
-   Scroll container (card-like)
-   --------------------------------------------------------- */
-.demo-table-wrap {
-  margin-top: 0.5rem;
+/* ---------- Sample Switch ---------- */
+
+.demo-switch-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0 16px;
+  flex-wrap: wrap;
 }
 
-.demo-table-scroll {
+.demo-switch-links {
+  display: flex;
+  gap: 8px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 0.75rem;
-  border-radius: 12px;
-  background: #fafafa;
-  border: 1px solid #eef1f6;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Top synced horizontal scrollbar */
-.demo-xscroll {
-  overflow-x: auto;
-  overflow-y: hidden;
-  height: 14px;
-  border-radius: 12px;
-}
-
-.demo-xscroll-top {
-  background: #fafafa;
-  border: 1px solid #eef1f6;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-  margin-bottom: 8px;
-}
-
-.demo-xscroll-inner {
-  height: 1px; /* dummy */
-}
-
-/* ---------------------------------------------------------
-   Table base
-   --------------------------------------------------------- */
-.demo-table {
-  table-layout: fixed;
-  width: max-content;
-  min-width: 1900px; /* query + 7 outputs */
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-.demo-table th,
-.demo-table td {
-  text-align: center;
-  vertical-align: middle;
-  padding: 0.85rem 0.6rem;
-  line-height: 1.25;
-  background-clip: padding-box;
-}
-
-/* Column separators (vertical lines only) */
-.demo-table th,
-.demo-table td {
-  border-right: 1px solid #e6eaf2;
-}
-
-.demo-table th:last-child,
-.demo-table td:last-child {
-  border-right: none;
-}
-
-/* ---------------------------------------------------------
-   Sticky header (1st row)
-   --------------------------------------------------------- */
-.demo-table thead th {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-
-  background: linear-gradient(#f7f9fe, #eef3fb);
-  color: #0b1f5c;
-  font-weight: 600;
-  white-space: nowrap;
-
-  padding-top: 0.95rem;
-  padding-bottom: 0.95rem;
-
-  border-bottom: 3px solid #cfd8ea;
-  box-shadow: 0 6px 10px rgba(0,0,0,0.08);
-}
-
-/* Header column separators */
-.demo-table thead th {
-  border-right: 1px solid #dbe3f3;
-}
-.demo-table thead th:last-child {
-  border-right: none;
-}
-
-/* ---------------------------------------------------------
-   Sticky first column (Text Query)
-   --------------------------------------------------------- */
-.demo-table th.query-col,
-.demo-table td.query-col {
-  position: sticky;
-  left: 0;
-  z-index: 4;
-
-  width: 220px;
-  min-width: 220px;
-  max-width: 220px;
-
-  font-weight: 700;
+.demo-sample-link {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f2f2f2;
   color: #333;
-  white-space: normal;
-
-  background: #eef2f8;
-  border-right: 2px solid #d7deea;
-  box-shadow: 2px 0 0 rgba(0,0,0,0.04);
-}
-
-/* intersection: header × query */
-.demo-table thead th.query-col {
-  z-index: 6;
-}
-
-/* ---------------------------------------------------------
-   Row grouping & hover / stripe harmony
-   --------------------------------------------------------- */
-
-.demo-table tbody td,
-.demo-table tbody th {
-  border-bottom: none !important;
-}
-
-.demo-table tbody tr:nth-child(3n) td.query-col {
-  border-bottom: 2px solid #e2e8f2 !important;
-}
-
-/* Stripe / Hover */
-.table.is-striped tbody tr:nth-child(even) td,
-.table.is-striped tbody tr:nth-child(even) th {
-  background-color: #fcfcfd;
-}
-
-.table.is-striped tbody tr:nth-child(even) td.query-col,
-.table.is-hoverable tbody tr:hover td.query-col {
-  background: #eef2f8;
-}
-
-.table.is-hoverable tbody tr:hover td {
-  background: #f6faff;
-}
-
-/* ---------------------------------------------------------
-   Media cells
-   --------------------------------------------------------- */
-
-/* Spectrogram images */
-.demo-table img {
-  width: 250px;
-  height: 125px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 6px;
-  background: #fff;
-}
-
-/* Video thumbs */
-.demo-video-thumb {
-  width: 250px;
-  height: 125px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 6px;
-  background: #000;
-  object-fit: cover;
-}
-
-/* Audio players (no fixed height) */
-.demo-table audio {
-  width: 250px;
-  display: block;
-  margin: 0 auto;
-  height: auto;
-  min-height: 32px;
-}
-
-/* ---------------------------------------------------------
-   Misc
-   --------------------------------------------------------- */
-.demo-video-row td {
-  padding-top: 0.5rem;
-  padding-bottom: 0.25rem;
-}
-
-.fail-case {
-  color: #e53935;
   font-weight: 700;
-  margin-left: 0.5rem;
-  font-size: 0.85em;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
-
-/* =========================================================
-   Mobile-only horizontal swipe (DEMO ONLY)
-   ========================================================= */
-@media (max-width: 768px) {
-
-  /* ✅ DEMO TABLE ONLY */
-  .demo-table-wrap .demo-table-scroll {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
-  }
-
-  /* ✅ Disable sticky ONLY inside demo table */
-  .demo-table-wrap .demo-table thead th,
-  .demo-table-wrap .demo-table th.query-col,
-  .demo-table-wrap .demo-table td.query-col {
-    position: static !important;
-    box-shadow: none !important;
-  }
-
-  /* ✅ Resize media ONLY in demo */
-  .demo-table-wrap .demo-table img,
-  .demo-table-wrap .demo-video-thumb,
-  .demo-table-wrap .demo-table audio {
-    width: 200px;
-  }
-
-  /* ✅ Swipe hint ONLY for demo */
-  .demo-table-wrap .demo-table-scroll::before {
-    content: "← Swipe horizontally to explore the demo →";
-    display: block;
-    text-align: center;
-    font-size: 0.75rem;
-    color: #666;
-    margin-bottom: 6px;
-  }
+.demo-sample-link.is-active {
+  background: #111;
+  color: #fff;
 }
 
-/* =========================================================
-   Keep non-demo sections centered on mobile
-   ========================================================= */
-@media (max-width: 768px) {
+/* ---------- Sample View ---------- */
 
-  section.section:not(.demo-section),
-  section.hero:not(.demo-section) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-  }
+.demo-view {
+  display: block;
 }
 
-
-/* ===== Generation Demo: fixed aspect ratio video cards ===== */
-.gen-demo-box {
+.demo-view .box {
   border-radius: 16px;
 }
 
-.gen-video-frame {
+/* =========================================================
+   Method Cards Grid (PC: 4 + 3)
+   ========================================================= */
+
+.demo-method-grid {
+  display: grid;
+  gap: 14px;
+  align-items: start;
+}
+
+/* Desktop: 4 columns → 7 cards = 4 + 3 */
+@media (min-width: 1100px) {
+  .demo-method-grid {
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
+  }
+
+  /* center second row (cards 5–7) */
+  /*
+  .demo-method-grid > :nth-child(5) {
+    grid-column: 2;
+  }
+  */
+}
+
+/* Tablet */
+@media (max-width: 1099px) {
+  .demo-method-grid {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+  }
+}
+
+/* Small */
+@media (max-width: 900px) {
+  .demo-method-grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .demo-method-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Method Card
+   ========================================================= */
+
+.demo-method-card {
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.demo-method-title {
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+/* =========================================================
+   Media
+   ========================================================= */
+
+.demo-view img,
+.demo-view audio {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.demo-method-card audio {
+  margin-top: 10px;
+}
+
+.demo-video-frame {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: #111;
+  background: #000;
   border-radius: 12px;
   overflow: hidden;
+  margin-top: 10px;
 }
 
+.demo-video-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
+/* =========================================================
+   Failure / Annotation
+   ========================================================= */
+
+.fail-case {
+  color: #d32f2f;
+  font-weight: 800;
+  font-size: 0.9em;
+}
