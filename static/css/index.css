@@ -247,6 +247,11 @@ body {
   object-fit: contain;
 }
 
+
+.demo-method-card .demo-video-frame {
+  margin-bottom: 10px;
+}
+
 /* =========================================================
    Failure / Annotation
    ========================================================= */
