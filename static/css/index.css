@@ -368,3 +368,20 @@ body {
     margin-right: auto;
   }
 }
+
+
+/* ===== Generation Demo: fixed aspect ratio video cards ===== */
+.gen-demo-box {
+  border-radius: 16px;
+}
+
+.gen-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
